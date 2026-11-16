@@ -1,0 +1,74 @@
+erDiagram
+    CLUBES ||--o{ PARTIDAS : "joga como mandante"
+    CLUBES ||--o{ PARTIDAS : "joga como visitante"
+    CALENDARIO ||--o{ PARTIDAS : "ocorre em"
+    PARTIDAS ||--o{ ESTATISTICAS : "gera"
+    PARTIDAS ||--o{ GOLS : "tem"
+    PARTIDAS ||--o{ CARTOES : "tem"
+    CLUBES ||--o{ ESTATISTICAS : "registra"
+    CLUBES ||--o{ GOLS : "marca"
+    CLUBES ||--o{ CARTOES : "recebe"
+
+    CLUBES {
+        string Clube PK "nome do clube"
+        string Estado "UF do clube"
+    }
+
+    CALENDARIO {
+        date Data PK
+        int Ano
+        int Mes
+        string Dia_Semana
+    }
+
+    PARTIDAS {
+        int ID PK "ID da partida"
+        int Rodada
+        date Data FK
+        time Horario
+        string Mandante FK "-> CLUBES"
+        string Visitante FK "-> CLUBES"
+        string Formacao_Mandante
+        string Formacao_Visitante
+        string Tecnico_Mandante
+        string Tecnico_Visitante
+        string Vencedor "'-' = empate"
+        string Arena
+        int Mandante_Placar
+        int Visitante_Placar
+    }
+
+    ESTATISTICAS {
+        int Partida_ID PK, FK "-> PARTIDAS"
+        string Clube PK, FK "-> CLUBES"
+        int Rodada
+        int Chutes
+        int Chutes_a_Gol
+        decimal Posse_de_Bola
+        int Passes
+        decimal Precisao_Passes
+        int Faltas
+        int Cartao_Amarelo
+        int Cartao_Vermelho
+        int Impedimentos
+        int Escanteios
+    }
+
+    GOLS {
+        int Partida_ID FK "-> PARTIDAS"
+        string Clube FK "-> CLUBES"
+        int Rodada
+        string Atleta
+        string Minuto
+    }
+
+    CARTOES {
+        int Partida_ID FK "-> PARTIDAS"
+        string Clube FK "-> CLUBES"
+        int Rodada
+        string Cartao "Amarelo / Vermelho"
+        string Atleta
+        int Num_Camisa
+        string Posicao
+        string Minuto
+    }
