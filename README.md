@@ -12,7 +12,7 @@ Dashboard em **Power BI** com a análise histórica do Campeonato Brasileiro Sé
 
 | Item | Link |
 |---|---|
-| 🎥 Vídeo de apresentação | _(adicionar link do vídeo)_ |
+| 🎥 Vídeo de apresentação | https://1drv.ms/v/c/b39d037059406687/IQDhDaCjEPDrRKjGHmX8mzCHAchTYu0C2iqLw03ORmJ97e0?e=KvY0rD |
 | 📋 Board do projeto | https://github.com/users/mathe1462/projects/4 |
 | 💻 Código-fonte | https://github.com/mathe1462/Brasileirao-PowerBI |
 
